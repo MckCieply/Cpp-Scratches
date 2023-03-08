@@ -6,6 +6,7 @@ int main(){
     int choice;
     bool flag = true;
     int a, b, result;
+    char operation;
     cout << "Please choose your operation: \n1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n>> ";
     cin >> choice;
     if(choice >= 1 && choice <= 4){
@@ -15,16 +16,21 @@ int main(){
         cin >> b;
         if (choice == 1){
             result = a + b;
+            operation = '+';
         }
         else if (choice == 2){
             result = a - b;
+            operation = '-';
         }
         else if (choice == 3){
             result = a * b;
+            operation = '*';
         }
         else if (choice == 4){
-            if( b != 0)
+            if( b != 0){
                 result = a / b;
+                operation = '/';
+            }
             else{
                 cout << "You cannot divide by 0";
                 flag = false;
@@ -36,6 +42,6 @@ int main(){
         flag = false;
     }
     if(flag){
-        cout << "Your result is equal to " <<  result <<".";
+        cout << "Result of " << a << operation << b << " is equal to " <<  result <<".";
     }
 }
